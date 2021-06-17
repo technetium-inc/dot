@@ -5,6 +5,8 @@
 #include "exception.h"
 
 namespace ArgumentParser {
+	// The key value pairs
+	// Similar to a dictionary
   struct ValueKeyPair {
 		std::string key;
 		std::string value;
@@ -16,7 +18,7 @@ namespace ArgumentParser {
 
 		std::string string_from_vector(const std::vector<std::string> &data) {
    return std::accumulate(data.begin(), data.end(), std::string(""));
-}
+}		
 
 		ValueKeyPair* getParameter(std::vector<std::string> data){
 			ValueKeyPair* parameter;
