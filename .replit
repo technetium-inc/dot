@@ -1,0 +1,2 @@
+language = "cpp"
+run = "g++ main.cpp && ./a.out ./examples/example.dot --t=1 && rm ./a.out"
