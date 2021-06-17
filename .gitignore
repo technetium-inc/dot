@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+.gitignore
+.orig
 
 # Compiled Object files
 *.slo
