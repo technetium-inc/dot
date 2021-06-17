@@ -1,5 +1,5 @@
-#ifndef ARGUMENTS_H
-#define ARGUMENTS_H	
+#ifndef EXCEPTION_H
+#define EXCEPTION_H	
 
 class Exception {
 	private:
@@ -11,7 +11,7 @@ class Exception {
 	void throwException() {
 		std::cout << this->message << std::endl;
 		if(this->suggestion.length() > 0){
-			std::cout << this.suggestion << std::endl;
+			std::cout << this->suggestion << std::endl;
 		}
 		if(this->isFatal){
 			exit(this->exitStatusCode);
@@ -25,8 +25,8 @@ class Exception {
 		this->isFatal = isFatal;
 		this->exitStatusCode = exitStatusCode;
 
-		this->throwException()
+		this->throwException();
 	}
-}
+};
 
 #endif
