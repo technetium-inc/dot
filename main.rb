@@ -13,6 +13,7 @@ def execute_script(filename, parameters)
     error("#{filename} does not exist")
   end
   lexer = LexicalAnalyser.new(File.read(filename)).tokenise()
+  print(lexer)
 end
 
 def perform_command(results)
