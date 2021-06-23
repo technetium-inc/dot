@@ -1,3 +1,13 @@
+require_relative "./exception.rb"
+
+class ArgumentParserResults
+  attr_reader :command, :parameters
+
+  def initialize(command, parameters)
+    @command = command
+    @parameters = parameters
+  end
+end
 
 class ArgumentParser
   attr_accessor :arguments
@@ -16,13 +26,14 @@ class ArgumentParser
         current_index += 1
         next
       end
-      is_valid_parameters = argument.starts_with("--")
+      is_valid_parameters = argument.start_with?("--")
       if not is_valid_parameters
-        print("Not valid")
+        error("#{argument} not a valid parameter\n", "Parameters should start with --")
         return nil
       end
       parameters.push(argument)
       current_index += 1
     end
+    return ArgumentParserResults.new(command, parameters)
   end
 end
